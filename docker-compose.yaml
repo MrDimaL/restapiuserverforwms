@@ -1,7 +1,8 @@
-version: "3.9"
-
 services:
-  api:
+  userver:
     build: .
     ports:
-      - "8000:8000"
+      - "8080:8080"
+    privileged: true
+    security_opt:
+      - seccomp:unconfined
