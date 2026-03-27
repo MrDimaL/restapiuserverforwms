@@ -136,7 +136,7 @@ POST /arrivals - создание поступления
 
 ## Структура проекта
 ```
-home2/ 
+restapiuserverforwms/ 
 | - config/ 
 | |- config.yaml 
 | - src/ 
