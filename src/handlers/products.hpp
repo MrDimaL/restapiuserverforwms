@@ -67,6 +67,10 @@ public:
             const userver::server::http::HttpRequest& request,
             userver::server::request::RequestContext&) const override {
         auto query = request.GetArg("q");
-        return R"([{"id": 1, "name": "Search result for ")" + query + R"("}])";
+        if (query.empty()) {
+            query = "none";
+        } else {
+            return R"([{"id": 1, "name": "Search result for ")" + query + R"("}])";
+        }
     }
 };
