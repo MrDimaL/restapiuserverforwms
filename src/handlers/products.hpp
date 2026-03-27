@@ -3,30 +3,30 @@
 #include <userver/server/handlers/http_handler_base.hpp>
 
 class ProductsHandler : public userver::server::handlers::HttpHandlerBase {
-public:
-    static constexpr std::string_view kName = "handler-products";
+    public:
+        static constexpr std::string_view kName = "handler-products";
 
-    using HttpHandlerBase::HttpHandlerBase;
+        using HttpHandlerBase::HttpHandlerBase;
 
-    std::string HandleRequestThrow(
-            const userver::server::http::HttpRequest&,
-            userver::server::request::RequestContext&) const override {
-        return R"({"products": []})";
-    }
+        std::string HandleRequestThrow(
+                const userver::server::http::HttpRequest&,
+                userver::server::request::RequestContext&) const override {
+            return R"({"products": []})";
+        }
 };
 
 
 class ProductsCreateHandler : public userver::server::handlers::HttpHandlerBase {
-public:
-    static constexpr std::string_view kName = "handler-products-create";
+    public:
+        static constexpr std::string_view kName = "handler-products-create";
 
-    using HttpHandlerBase::HttpHandlerBase;
+        using HttpHandlerBase::HttpHandlerBase;
 
-    std::string HandleRequestThrow(
-            const userver::server::http::HttpRequest& request,
-            userver::server::request::RequestContext&) const override {
-        return R"({"id": 1, "status": "created"})";
-    }
+        std::string HandleRequestThrow(
+                const userver::server::http::HttpRequest& request,
+                userver::server::request::RequestContext&) const override {
+            return R"({"id": 1, "status": "created"})";
+        }
 };
 
 class ProductsUpdateHandler : public userver::server::handlers::HttpHandlerBase {

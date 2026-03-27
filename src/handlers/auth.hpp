@@ -3,14 +3,14 @@
 #include <userver/server/handlers/http_handler_base.hpp>
 
 class AuthHandler : public userver::server::handlers::HttpHandlerBase {
-public:
-    static constexpr std::string_view kName = "handler-auth";
+    public:
+        static constexpr std::string_view kName = "handler-auth";
 
-    using HttpHandlerBase::HttpHandlerBase;
+        using HttpHandlerBase::HttpHandlerBase;
 
-    std::string HandleRequestThrow(
-            const userver::server::http::HttpRequest&,
-            userver::server::request::RequestContext&) const override {
-        return R"({"token": "demo-token"})";
-    }
+        std::string HandleRequestThrow(
+                const userver::server::http::HttpRequest&,
+                userver::server::request::RequestContext&) const override {
+            return R"({"token": "demo-token"})";
+        }
 };
