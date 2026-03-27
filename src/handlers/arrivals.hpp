@@ -15,7 +15,6 @@ public:
     }
 };
 
-// POST /arivals
 class ArrivalsHandlerPost : public userver::server::handlers::HttpHandlerBase {
 public:
     static constexpr std::string_view kName = "handler-arrivals-post";
